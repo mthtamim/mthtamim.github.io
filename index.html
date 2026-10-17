@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tamim — mthtamim.bond</title>
+<meta name="description" content="Home of Tamim's projects: Metadata Cleaner and more.">
+<style>
+  :root{
+    --bg:#0b0f14; --card:#131a22; --card2:#0f151c; --line:#223041;
+    --text:#e8eef4; --muted:#93a5b5; --accent:#4da3ff; --accent2:#37d99a;
+    --radius:18px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  body{
+    background:radial-gradient(900px 500px at 80% -10%, #16324f 0%, transparent 60%),
+               radial-gradient(700px 400px at -10% 110%, #0f2e26 0%, transparent 55%),
+               var(--bg);
+    color:var(--text);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Bengali",sans-serif;
+    min-height:100vh; padding:28px 18px 48px;
+  }
+  .wrap{max-width:680px; margin:0 auto}
+  header{text-align:center; padding:34px 0 8px}
+  .avatar{
+    width:92px; height:92px; border-radius:50%; margin:0 auto 16px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:42px; background:linear-gradient(145deg,#1b2a3a,#101820);
+    border:1px solid var(--line); box-shadow:0 10px 30px rgba(0,0,0,.45);
+  }
+  h1{font-size:30px; letter-spacing:.2px}
+  .name-bn{color:var(--muted); font-size:15px; margin-top:4px}
+  .tagline{color:var(--muted); font-size:15.5px; line-height:1.55; margin:16px auto 0; max-width:520px}
+  .domain{
+    display:inline-block; margin-top:16px; padding:6px 14px; border-radius:999px;
+    border:1px solid var(--line); background:var(--card2); color:var(--accent);
+    font-size:13.5px; letter-spacing:.4px;
+  }
+  h2{font-size:17px; margin:36px 0 14px; color:var(--text)}
+  h2 span{color:var(--muted); font-weight:400; font-size:13.5px}
+  .grid{display:grid; gap:14px}
+  @media(min-width:560px){ .grid{grid-template-columns:1fr 1fr} }
+  a.card, div.card{
+    display:block; text-decoration:none; color:var(--text);
+    background:linear-gradient(160deg,var(--card),var(--card2));
+    border:1px solid var(--line); border-radius:var(--radius); padding:18px;
+  }
+  a.card:active{transform:scale(.99)}
+  .icon{font-size:26px; margin-bottom:10px}
+  .card h3{font-size:16.5px; margin-bottom:6px}
+  .card p{color:var(--muted); font-size:13.8px; line-height:1.5}
+  .url{color:var(--accent); font-size:13px; margin-top:10px; word-break:break-all}
+  .badge{
+    display:inline-block; font-size:11px; padding:3px 9px; border-radius:999px; margin-top:10px;
+    background:rgba(55,217,154,.12); color:var(--accent2); border:1px solid rgba(55,217,154,.35);
+  }
+  .badge.soon{background:rgba(147,165,181,.10); color:var(--muted); border-color:var(--line)}
+  .dim{opacity:.75}
+  footer{text-align:center; color:var(--muted); font-size:13px; margin-top:44px; line-height:1.7}
+  footer a{color:var(--accent); text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="avatar">🧑‍💻</div>
+    <h1>MD Tamim Hasan Akando</h1>
+    <div class="name-bn">তামিম — HSC student &amp; builder, Bangladesh</div>
+    <p class="tagline">I build small, useful tools and experiments on the web.
+    This is my home on the internet — every project lives on its own subdomain.</p>
+    <div class="domain">mthtamim.bond</div>
+  </header>
+
+  <h2>Projects <span>— live</span></h2>
+  <div class="grid">
+    <a class="card" href="https://cleaner.mthtamim.bond/">
+      <div class="icon">🧹</div>
+      <h3>Metadata Cleaner</h3>
+      <p>Remove EXIF, GPS and hidden metadata from photos, PDFs and Office files — 100% in your browser, no file ever leaves your device.</p>
+      <div class="url">cleaner.mthtamim.bond</div>
+      <span class="badge">● Live</span>
+    </a>
+    <a class="card" href="https://github.com/mthtamim">
+      <div class="icon">🐙</div>
+      <h3>GitHub</h3>
+      <p>All my code — the universal downloader, games, study tools and experiments.</p>
+      <div class="url">github.com/mthtamim</div>
+      <span class="badge">● Open</span>
+    </a>
+  </div>
+
+  <h2>Coming soon <span>— in the works</span></h2>
+  <div class="grid">
+    <div class="card dim">
+      <div class="icon">🚆</div>
+      <h3>Bangladesh Railway Pixel Simulator</h3>
+      <p>A pixel-art train driving simulator on the Dhaka–Chattogram route, with passengers, physics and career mode.</p>
+      <span class="badge soon">railway.mthtamim.bond — soon</span>
+    </div>
+    <div class="card dim">
+      <div class="icon">🔬</div>
+      <h3>WHAT IF? — Interactive Science Universe</h3>
+      <p>An interactive science playground: what-if simulators, virtual labs and scale explorers.</p>
+      <span class="badge soon">science.mthtamim.bond — soon</span>
+    </div>
+  </div>
+
+  <footer>
+    Built by Tamim · Hosted free on GitHub Pages · DNS by Cloudflare<br>
+    <a href="https://github.com/mthtamim">github.com/mthtamim</a>
+  </footer>
+</div>
+</body>
+</html>
