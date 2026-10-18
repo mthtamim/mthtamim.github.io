@@ -4,7 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tamim — mthtamim.bond</title>
-<meta name="description" content="Home of Tamim's projects: Metadata Cleaner, Railway Pixel Simulator, 3D Wave Lab and more.">
+<meta name="description" content="Portfolio of MD Tamim Hasan Akando — HSC student at Rangpur Government College (RGC). Creator of Metadata Cleaner, Railway Pixel Simulator and the 3D Wave Lab.">
+<meta property="og:title" content="MD Tamim Hasan Akando — mthtamim.bond">
+<meta property="og:description" content="HSC student at Rangpur Government College (RGC) · Builder of web tools, simulators and interactive science experiments.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mthtamim.bond/">
 <meta name="theme-color" content="#070b12">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
 <style>
@@ -127,6 +131,24 @@
 
   footer{text-align:center; color:var(--muted2); font-size:13px; margin-top:40px; line-height:1.8}
   footer a{color:var(--cyan); text-decoration:none}
+
+  /* about */
+  .about{
+    padding:22px; border-radius:var(--radius);
+    background:linear-gradient(165deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border:1px solid var(--line); backdrop-filter:blur(10px);
+  }
+  .about p{color:var(--muted); font-size:14.5px; line-height:1.7}
+  .about p b{color:var(--text)}
+  .facts{list-style:none; margin-top:16px; display:grid; gap:10px}
+  @media(min-width:580px){ .facts{grid-template-columns:1fr 1fr} }
+  .facts li{font-size:14px; color:var(--muted); display:flex; gap:9px; align-items:baseline}
+  .facts li b{color:var(--text); font-weight:600; white-space:nowrap}
+  .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px}
+  .chip{
+    font-size:12.5px; padding:6px 12px; border-radius:999px; color:var(--text);
+    border:1px solid var(--line); background:rgba(255,255,255,.05);
+  }
 </style>
 </head>
 <body>
@@ -136,9 +158,9 @@
     <div class="avatar">🧑‍💻</div>
     <span class="status"><span class="dot"></span> All projects live</span>
     <h1>MD Tamim Hasan Akando</h1>
-    <div class="name-bn">তামিম — HSC student &amp; builder, Bangladesh 🇧🇩</div>
-    <p class="tagline">I build small, useful tools, games and experiments for the web.
-    This is my home on the internet — every project lives on its own subdomain.</p>
+    <div class="name-bn">🎓 HSC Student · Rangpur Government College (RGC) · Rangpur, Bangladesh 🇧🇩</div>
+    <p class="tagline">I design and build small, useful tools, simulators and interactive experiments for the web — free and open for everyone.
+    This site is my portfolio and home on the internet, where every project lives on its own subdomain.</p>
     <div class="domain">mthtamim.bond</div>
     <div class="stats">
       <div class="stat"><b>4</b><span>Live sites</span></div>
@@ -146,6 +168,25 @@
       <div class="stat"><b>100%</b><span>Free hosting</span></div>
     </div>
   </header>
+
+  <h2 class="reveal">About <span>— who I am</span></h2>
+  <div class="about reveal">
+    <p>I'm <b>Tamim</b>, an HSC student at <b>Rangpur Government College (RGC)</b>, Bangladesh.
+    Alongside my studies I build practical web software — a privacy tool used to strip hidden metadata from files,
+    a pixel-art railway simulator, and an interactive science lab. Everything here is built by me, hosted for free,
+    and open for anyone to use.</p>
+    <ul class="facts">
+      <li>🎓 <span><b>Education:</b> HSC, Rangpur Government College (RGC)</span></li>
+      <li>💻 <span><b>Focus:</b> Web tools, privacy &amp; simulations</span></li>
+      <li>📍 <span><b>Based in:</b> Rangpur, Bangladesh</span></li>
+      <li>✉️ <span><b>Contact:</b> hello@mthtamim.bond</span></li>
+    </ul>
+    <div class="chips">
+      <span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">HTML / CSS</span>
+      <span class="chip">GitHub Pages</span><span class="chip">Cloudflare</span><span class="chip">Privacy tools</span>
+      <span class="chip">Game simulation</span><span class="chip">Science experiments</span>
+    </div>
+  </div>
 
   <h2 class="reveal">Projects <span>— live now</span></h2>
   <div class="grid">
@@ -199,7 +240,8 @@
   </div>
 
   <footer>
-    Built by Tamim · Hosted free on GitHub Pages · DNS by Cloudflare<br>
+    Built by Tamim · HSC Student, Rangpur Government College (RGC) · Rangpur, Bangladesh<br>
+    Hosted free on GitHub Pages · DNS by Cloudflare<br>
     <a href="https://github.com/mthtamim">github.com/mthtamim</a> · © <span id="yr">2026</span>
   </footer>
 </div>
