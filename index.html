@@ -3,164 +3,126 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tamim — mthtamim.bond</title>
-<meta name="description" content="Portfolio of MD Tamim Hasan Akando — HSC student at Rangpur Government College (RGC). Creator of Metadata Cleaner, Railway Pixel Simulator and the 3D Wave Lab.">
+<title>MD Tamim Hasan Akando — mthtamim.bond</title>
+<meta name="description" content="Portfolio of MD Tamim Hasan Akando — HSC (Science) student at Rangpur Government College (RGC). Creator of Metadata Cleaner, Railway Pixel Simulator and the 3D Wave Lab.">
 <meta property="og:title" content="MD Tamim Hasan Akando — mthtamim.bond">
-<meta property="og:description" content="HSC (Science) student, Batch '27, at Rangpur Government College (RGC) · Builder of web tools, simulators and interactive science experiments.">
+<meta property="og:description" content="HSC (Science) student at Rangpur Government College (RGC) · Builder of web tools, simulators and interactive science experiments.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mthtamim.bond/">
 <meta name="theme-color" content="#070b12">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
 <style>
   :root{
-    --bg:#070b12; --card:rgba(255,255,255,.04); --line:rgba(255,255,255,.09);
-    --text:#eef3f8; --muted:#9db0c1; --muted2:#6f859a;
-    --blue:#4da3ff; --cyan:#38e1ff; --green:#37d99a; --orange:#ff9f43; --violet:#b78bff;
-    --radius:20px;
+    --bg:#070b12; --line:rgba(255,255,255,.09); --panel:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
+    --text:#eef3f8; --muted:#9db0c1; --faint:#6f859a;
+    --cyan:#38e1ff; --green:#37d99a; --radius:20px;
   }
   *{box-sizing:border-box; margin:0; padding:0}
-  html{scroll-behavior:smooth}
   body{
-    background:var(--bg); color:var(--text);
+    background:var(--bg); color:var(--text); position:relative; overflow-x:hidden;
     font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans Bengali",sans-serif;
-    min-height:100vh; overflow-x:hidden;
-    padding:26px 18px 56px; position:relative;
+    min-height:100vh; padding:26px 18px 52px;
   }
-  /* animated ambient background */
-  .orb{position:fixed; border-radius:50%; filter:blur(90px); opacity:.5; z-index:-1; animation:drift 22s ease-in-out infinite alternate}
+  /* ambient background */
+  .orb{position:fixed; border-radius:50%; filter:blur(90px); z-index:-1; opacity:.45; animation:drift 22s ease-in-out infinite alternate}
   .orb.a{width:420px;height:420px;background:#12406e;top:-140px;right:-120px}
   .orb.b{width:360px;height:360px;background:#0d3b31;bottom:-120px;left:-120px;animation-delay:-8s}
-  .orb.c{width:260px;height:260px;background:#2c1a4d;top:44%;left:58%;animation-delay:-14s;opacity:.35}
-  @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-46px,38px) scale(1.13)}}
-  @media (prefers-reduced-motion: reduce){ .orb{animation:none} *{transition:none!important} }
+  .orb.c{width:260px;height:260px;background:#2c1a4d;top:44%;left:58%;animation-delay:-14s;opacity:.3}
+  @keyframes drift{to{transform:translate(-46px,38px) scale(1.13)}}
+  @media (prefers-reduced-motion:reduce){.orb{animation:none}*{transition:none!important}}
 
   .wrap{max-width:720px; margin:0 auto}
-  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease}
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease,transform .6s ease}
   .reveal.in{opacity:1; transform:none}
+  .panel{background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); backdrop-filter:blur(10px)}
 
   /* hero */
-  header{text-align:center; padding:40px 0 6px}
+  header{text-align:center; padding:38px 0 4px}
   .avatar{
-    width:104px; height:104px; border-radius:50%; margin:0 auto 20px;
-    display:flex; align-items:center; justify-content:center; font-size:48px;
-    background:linear-gradient(150deg,#16283d,#0b1220);
-    border:2px solid transparent;
-    background-clip:padding-box; position:relative;
+    width:104px; height:104px; border-radius:50%; margin:0 auto 20px; font-size:48px;
+    display:flex; align-items:center; justify-content:center; background:#0b1220;
     box-shadow:0 0 0 2px rgba(77,163,255,.45), 0 0 44px rgba(77,163,255,.28), 0 18px 40px rgba(0,0,0,.5);
   }
   .status{
-    display:inline-flex; align-items:center; gap:8px; font-size:12.5px; color:var(--green);
+    display:inline-flex; align-items:center; gap:8px; padding:5px 13px; border-radius:999px;
+    font-size:12.5px; font-weight:600; letter-spacing:.4px; text-transform:uppercase; color:var(--green);
     border:1px solid rgba(55,217,154,.35); background:rgba(55,217,154,.08);
-    padding:5px 13px; border-radius:999px; letter-spacing:.4px; text-transform:uppercase; font-weight:600;
   }
-  .status .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.8s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(55,217,154,.55)}70%{box-shadow:0 0 0 8px rgba(55,217,154,0)}100%{box-shadow:0 0 0 0 rgba(55,217,154,0)}}
+  .status i{width:8px; height:8px; border-radius:50%; background:var(--green); animation:pulse 1.8s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(55,217,154,0)} 100%{box-shadow:0 0 0 0 rgba(55,217,154,0)}}
   h1{
-    font-size:clamp(30px,7vw,42px); line-height:1.15; margin-top:18px; font-weight:800; letter-spacing:.2px;
+    margin-top:18px; font-size:clamp(29px,7vw,42px); line-height:1.15; font-weight:800;
     background:linear-gradient(92deg,#fff 20%,#8ec9ff 55%,#37d99a 90%);
     -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
   }
-  .name-bn{color:var(--muted); font-size:15px; margin-top:8px}
-  .tagline{color:var(--muted); font-size:15.5px; line-height:1.65; margin:16px auto 0; max-width:540px}
+  .role{margin-top:10px; font-size:15px; color:var(--muted)}
+  .tagline{margin:14px auto 0; max-width:520px; font-size:15px; line-height:1.65; color:var(--muted)}
   .domain{
     display:inline-block; margin-top:20px; padding:8px 18px; border-radius:999px;
-    border:1px solid var(--line); background:rgba(255,255,255,.05); color:var(--cyan);
-    font-size:14px; letter-spacing:1.2px; font-weight:600;
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+    border:1px solid var(--line); background:rgba(255,255,255,.05);
+    color:var(--cyan); font-size:14px; font-weight:600; letter-spacing:1.2px;
   }
-  .stats{display:flex; justify-content:center; gap:12px; margin-top:30px; flex-wrap:wrap}
-  .stat{
-    min-width:104px; padding:12px 16px; border-radius:16px; text-align:center;
-    background:var(--card); border:1px solid var(--line); backdrop-filter:blur(8px);
-  }
-  .stat b{display:block; font-size:21px; color:#fff}
-  .stat span{font-size:12px; color:var(--muted2); letter-spacing:.4px; text-transform:uppercase}
+  .stats{display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin-top:28px}
+  .stat{min-width:104px; padding:12px 16px; border-radius:16px; text-align:center; background:rgba(255,255,255,.04); border:1px solid var(--line)}
+  .stat b{display:block; font-size:21px}
+  .stat span{font-size:11.5px; letter-spacing:.4px; text-transform:uppercase; color:var(--faint)}
 
-  h2{font-size:18px; margin:42px 0 16px; display:flex; align-items:center; gap:10px}
+  /* sections */
+  h2{margin:42px 0 16px; font-size:18px; display:flex; align-items:center; gap:10px}
+  h2 small{font-size:13px; font-weight:400; color:var(--faint)}
   h2::after{content:""; flex:1; height:1px; background:linear-gradient(90deg,var(--line),transparent)}
-  h2 span{color:var(--muted2); font-weight:400; font-size:13px}
 
+  /* project cards */
   .grid{display:grid; gap:15px}
-  @media(min-width:580px){ .grid{grid-template-columns:1fr 1fr} .featured{grid-column:1/-1} }
-  a.card, div.card{
-    display:block; text-decoration:none; color:var(--text); position:relative;
-    background:linear-gradient(165deg, rgba(255,255,255,.065), rgba(255,255,255,.02));
-    border:1px solid var(--line); border-radius:var(--radius); padding:20px;
-    backdrop-filter:blur(10px); overflow:hidden;
-    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-  }
-  a.card::before{
-    content:""; position:absolute; inset:0; opacity:0; transition:opacity .25s;
-    background:radial-gradient(420px 200px at 18% 0%, var(--glow,rgba(77,163,255,.16)), transparent 65%);
-  }
+  @media(min-width:580px){.grid{grid-template-columns:1fr 1fr} .featured{grid-column:1/-1}}
+  .card{display:block; position:relative; overflow:hidden; padding:20px; text-decoration:none; color:var(--text); transition:transform .25s,border-color .25s,box-shadow .25s}
+  a.card::before{content:""; position:absolute; inset:0; opacity:0; transition:opacity .25s; background:radial-gradient(420px 200px at 18% 0%, var(--glow), transparent 65%)}
   a.card:hover, a.card:active{transform:translateY(-3px); border-color:rgba(255,255,255,.22); box-shadow:0 16px 34px rgba(0,0,0,.45)}
   a.card:hover::before{opacity:1}
-  .icon{
-    width:52px; height:52px; border-radius:15px; font-size:27px; margin-bottom:13px;
-    display:flex; align-items:center; justify-content:center;
-    background:var(--tint,rgba(77,163,255,.13)); border:1px solid var(--line);
-  }
-  .card h3{font-size:17px; margin-bottom:6px; display:flex; align-items:center; gap:8px}
-  .card h3 .arrow{margin-left:auto; color:var(--muted2); font-size:18px; transition:transform .25s, color .25s}
+  .icon{width:52px; height:52px; margin-bottom:13px; border-radius:15px; font-size:27px; display:flex; align-items:center; justify-content:center; background:var(--tint); border:1px solid var(--line)}
+  .card h3{font-size:17px; margin-bottom:6px; display:flex; align-items:center}
+  .card h3 .arrow{margin-left:auto; color:var(--faint); transition:transform .25s,color .25s}
   a.card:hover h3 .arrow{transform:translateX(4px); color:#fff}
-  .card p{color:var(--muted); font-size:14px; line-height:1.55}
-  .url{color:var(--cyan); font-size:13px; margin-top:11px; word-break:break-all; opacity:.9}
-  .badge{
-    display:inline-block; font-size:11px; font-weight:700; letter-spacing:.5px; padding:4px 10px;
-    border-radius:999px; margin-top:12px; text-transform:uppercase;
-    background:rgba(55,217,154,.12); color:var(--green); border:1px solid rgba(55,217,154,.35);
-  }
+  .card p{font-size:14px; line-height:1.55; color:var(--muted)}
+  .url{margin-top:11px; font-size:13px; color:var(--cyan); word-break:break-all}
+  .badge{display:inline-block; margin-top:12px; padding:4px 10px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; background:rgba(55,217,154,.12); color:var(--green); border:1px solid rgba(55,217,154,.35)}
   .badge.soon{background:rgba(157,176,193,.09); color:var(--muted); border-color:var(--line)}
   .dim{opacity:.72}
 
-  /* contact */
-  .contact{
-    margin-top:42px; text-align:center; padding:26px 20px; border-radius:var(--radius);
-    background:linear-gradient(165deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-    border:1px solid var(--line); backdrop-filter:blur(10px);
-  }
-  .contact h2{justify-content:center; margin:0 0 8px}
-  .contact h2::after{display:none}
-  .contact p{color:var(--muted); font-size:14px; margin-bottom:16px}
-  .mails{display:flex; gap:10px; justify-content:center; flex-wrap:wrap}
-  .mails a{
-    color:var(--text); text-decoration:none; font-size:14px; padding:10px 16px; border-radius:999px;
-    border:1px solid var(--line); background:rgba(255,255,255,.05); transition:border-color .2s, transform .2s;
-  }
-  .mails a:hover, .mails a:active{border-color:rgba(56,225,255,.5); transform:translateY(-2px)}
-
-  footer{text-align:center; color:var(--muted2); font-size:13px; margin-top:40px; line-height:1.8}
-  footer a{color:var(--cyan); text-decoration:none}
-
   /* about */
-  .about{
-    padding:22px; border-radius:var(--radius);
-    background:linear-gradient(165deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-    border:1px solid var(--line); backdrop-filter:blur(10px);
-  }
-  .about p{color:var(--muted); font-size:14.5px; line-height:1.7}
+  .about{padding:22px}
+  .about p{font-size:14.5px; line-height:1.7; color:var(--muted)}
   .about p b{color:var(--text)}
   .facts{list-style:none; margin-top:16px; display:grid; gap:10px}
-  @media(min-width:580px){ .facts{grid-template-columns:1fr 1fr} }
-  .facts li{font-size:14px; color:var(--muted); display:flex; gap:9px; align-items:baseline}
-  .facts li b{color:var(--text); font-weight:600; white-space:nowrap}
+  @media(min-width:580px){.facts{grid-template-columns:1fr 1fr}}
+  .facts li{display:flex; gap:9px; align-items:baseline; font-size:14px; color:var(--muted)}
+  .facts b{color:var(--text); font-weight:600}
   .chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px}
-  .chip{
-    font-size:12.5px; padding:6px 12px; border-radius:999px; color:var(--text);
-    border:1px solid var(--line); background:rgba(255,255,255,.05);
-  }
+  .chip{padding:6px 12px; border-radius:999px; font-size:12.5px; border:1px solid var(--line); background:rgba(255,255,255,.05)}
+
+  /* contact */
+  .contact{margin-top:42px; padding:26px 20px; text-align:center}
+  .contact h2{margin:0 0 8px; justify-content:center}
+  .contact h2::after{display:none}
+  .contact p{margin-bottom:16px; font-size:14px; color:var(--muted)}
+  .mails{display:flex; flex-wrap:wrap; gap:10px; justify-content:center}
+  .mails a{padding:10px 16px; border-radius:999px; font-size:14px; color:var(--text); text-decoration:none; border:1px solid var(--line); background:rgba(255,255,255,.05); transition:border-color .2s,transform .2s}
+  .mails a:hover, .mails a:active{border-color:rgba(56,225,255,.5); transform:translateY(-2px)}
+
+  footer{margin-top:38px; text-align:center; font-size:13px; line-height:1.8; color:var(--faint)}
+  footer a{color:var(--cyan); text-decoration:none}
 </style>
 </head>
 <body>
 <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
 <div class="wrap">
+
   <header class="reveal">
     <div class="avatar">🧑‍💻</div>
-    <span class="status"><span class="dot"></span> All projects live</span>
+    <span class="status"><i></i> All projects live</span>
     <h1>MD Tamim Hasan Akando</h1>
-    <div class="name-bn">🎓 HSC Student (Science) · Rangpur Government College (RGC) · Rangpur, Bangladesh 🇧🇩</div>
-    <p class="tagline">I design and build small, useful tools, simulators and interactive experiments for the web — free and open for everyone.
-    This site is my portfolio and home on the internet, where every project lives on its own subdomain.</p>
+    <div class="role">HSC (Science) Student · Rangpur Government College</div>
+    <p class="tagline">I build small, useful web tools, simulators and interactive experiments — free and open for everyone. This is my home on the internet; every project lives on its own subdomain.</p>
     <div class="domain">mthtamim.bond</div>
     <div class="stats">
       <div class="stat"><b>4</b><span>Live sites</span></div>
@@ -169,32 +131,30 @@
     </div>
   </header>
 
-  </div>
-
-  <h2 class="reveal">Projects <span>— live now</span></h2>
+  <h2 class="reveal">Projects <small>— live now</small></h2>
   <div class="grid">
-    <a class="card featured reveal" href="https://cleaner.mthtamim.bond/" style="--glow:rgba(55,217,154,.18); --tint:rgba(55,217,154,.13)">
+    <a class="card panel featured reveal" href="https://cleaner.mthtamim.bond/" style="--glow:rgba(55,217,154,.18); --tint:rgba(55,217,154,.13)">
       <div class="icon">🧹</div>
       <h3>Metadata Cleaner <span class="arrow">→</span></h3>
-      <p>Remove EXIF, GPS and hidden metadata from photos, PDFs and Office files — 100% in your browser, no file ever leaves your device.</p>
+      <p>Remove EXIF, GPS and hidden metadata from photos, PDFs and Office files — 100% in your browser; no file ever leaves your device.</p>
       <div class="url">cleaner.mthtamim.bond</div>
       <span class="badge">● Live</span>
     </a>
-    <a class="card reveal" href="https://railway.mthtamim.bond/" style="--glow:rgba(255,159,67,.18); --tint:rgba(255,159,67,.13)">
+    <a class="card panel reveal" href="https://railway.mthtamim.bond/" style="--glow:rgba(255,159,67,.18); --tint:rgba(255,159,67,.13)">
       <div class="icon">🚆</div>
       <h3>Bangladesh Railway Pixel Simulator <span class="arrow">→</span></h3>
       <p>A pixel-art train driving simulator on the Dhaka–Chattogram route, with passengers, physics and career mode.</p>
       <div class="url">railway.mthtamim.bond</div>
       <span class="badge">● Live — play now</span>
     </a>
-    <a class="card reveal" href="https://waves.mthtamim.bond/" style="--glow:rgba(56,225,255,.18); --tint:rgba(56,225,255,.12)">
+    <a class="card panel reveal" href="https://waves.mthtamim.bond/" style="--glow:rgba(56,225,255,.18); --tint:rgba(56,225,255,.12)">
       <div class="icon">🌊</div>
       <h3>3D Wave &amp; Acoustics Lab <span class="arrow">→</span></h3>
       <p>An interactive 3D laboratory for waves and sound — experiment with frequency, amplitude and acoustics in your browser.</p>
       <div class="url">waves.mthtamim.bond</div>
       <span class="badge">● Live</span>
     </a>
-    <a class="card reveal" href="https://github.com/mthtamim" style="--glow:rgba(183,139,255,.16); --tint:rgba(183,139,255,.12)">
+    <a class="card panel reveal" href="https://github.com/mthtamim" style="--glow:rgba(183,139,255,.16); --tint:rgba(183,139,255,.12)">
       <div class="icon">🐙</div>
       <h3>GitHub <span class="arrow">→</span></h3>
       <p>All my code — the universal downloader, games, study tools and experiments.</p>
@@ -203,36 +163,33 @@
     </a>
   </div>
 
-  <h2 class="reveal">Coming soon <span>— in the works</span></h2>
+  <h2 class="reveal">Coming soon <small>— in the works</small></h2>
   <div class="grid">
-    <div class="card dim reveal">
-      <div class="icon" style="--tint:rgba(183,139,255,.12)">🔬</div>
+    <div class="card panel dim reveal" style="--tint:rgba(183,139,255,.12)">
+      <div class="icon">🔬</div>
       <h3>WHAT IF? — Interactive Science Universe</h3>
       <p>An interactive science playground: what-if simulators, virtual labs and scale explorers.</p>
       <span class="badge soon">science.mthtamim.bond — soon</span>
     </div>
   </div>
 
-
-  <h2 class="reveal">About <span>— who I am</span></h2>
-  <div class="about reveal">
-    <p>I'm <b>Tamim</b>, an HSC <b>Science</b> student (Batch '27) at <b>Rangpur Government College (RGC)</b>, Bangladesh.
-    Alongside my studies I build practical web software — a privacy tool used to strip hidden metadata from files,
-    a pixel-art railway simulator, and an interactive science lab. Everything here is built by me, hosted for free,
-    and open for anyone to use.</p>
+  <h2 class="reveal">About <small>— who I am</small></h2>
+  <div class="about panel reveal">
+    <p>I'm <b>Tamim</b> — a student who builds for the web. Alongside my studies I create practical software: a privacy tool that strips hidden metadata from files, a pixel-art railway simulator and an interactive science lab. Everything here is built by me, hosted for free, and open for anyone to use.</p>
     <ul class="facts">
-      <li>🎓 <span><b>Education:</b> HSC (Science), Rangpur Government College (RGC) — Batch '27</span></li>
+      <li>🎓 <span><b>Education:</b> HSC (Science), Batch '27</span></li>
+      <li>🏫 <span><b>College:</b> Rangpur Government College (RGC)</span></li>
       <li>💻 <span><b>Focus:</b> Web tools, privacy &amp; simulations</span></li>
       <li>📍 <span><b>Based in:</b> Rangpur, Bangladesh</span></li>
-      <li>✉️ <span><b>Contact:</b> hello@mthtamim.bond</span></li>
     </ul>
     <div class="chips">
       <span class="chip">JavaScript</span><span class="chip">Python</span><span class="chip">HTML / CSS</span>
       <span class="chip">GitHub Pages</span><span class="chip">Cloudflare</span><span class="chip">Privacy tools</span>
       <span class="chip">Game simulation</span><span class="chip">Science experiments</span>
     </div>
+  </div>
 
-  <div class="contact reveal">
+  <div class="contact panel reveal">
     <h2>✉️ Contact</h2>
     <p>Questions, ideas, or just say hello — mail me at my own domain:</p>
     <div class="mails">
@@ -242,9 +199,8 @@
   </div>
 
   <footer>
-    Built by Tamim · HSC Student, Rangpur Government College (RGC) · Rangpur, Bangladesh<br>
-    Hosted free on GitHub Pages · DNS by Cloudflare<br>
-    <a href="https://github.com/mthtamim">github.com/mthtamim</a> · © <span id="yr">2026</span>
+    © <span id="yr">2026</span> MD Tamim Hasan Akando · Rangpur, Bangladesh<br>
+    Hosted free on GitHub Pages · DNS by Cloudflare · <a href="https://github.com/mthtamim">github.com/mthtamim</a>
   </footer>
 </div>
 <script>
